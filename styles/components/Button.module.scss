@@ -1,0 +1,59 @@
+@use '../utils/variables' as *;
+@use '../utils/include-media' as *;
+
+.btn {
+  position: relative;
+  outline: none;
+  isolation: isolate;
+  border: none;
+  display: inline-block;
+  background-color: transparent;
+  color: $clr-white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  text-align: center;
+  width: 12rem;
+  font-family: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 1px solid $clr-white;
+  margin-left: 2rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+
+  @include media('>=mindesk') {
+    margin-left: 2.5rem;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $clr-white;
+    color: $clr-black;
+  }
+
+  &.responsive-nav {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    width: 18rem;
+  }
+
+  &.form-submit {
+    border: 1px solid $clr-primary;
+    margin: 1rem auto 3rem auto;
+    display: block;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $clr-primary;
+      color: $clr-white;
+    }
+
+    @include media('>mindesk') {
+      margin: 2rem auto;
+      font-size: 1.5rem;
+      width: 15rem;
+    }
+  }
+}

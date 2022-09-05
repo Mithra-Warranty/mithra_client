@@ -1,0 +1,147 @@
+@use './utils/variables' as *;
+@use './utils/include-media' as *;
+
+.navbar_container {
+  width: 100%;
+}
+
+.navbar {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    color: $clr-white;
+    font-size: 2rem;
+    cursor: pointer;
+
+    @include media('>=tablet') {
+      font-size: 2.2rem;
+    }
+
+    &-span {
+      color: $clr-primary;
+    }
+  }
+}
+
+.navList {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  display: none;
+
+  @include media('>=tablet') {
+    display: flex;
+  }
+
+  &__item {
+    font-size: 1.5rem;
+    padding: 1rem 0rem;
+    margin: 0 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $clr-primary;
+    }
+
+    @include media('>=mindesk') {
+      margin: 0 2.5rem;
+    }
+  }
+}
+
+.mobileNav {
+  height: 100vh;
+  width: 100vw;
+  background-color: $clr-gray;
+  position: fixed;
+  top: 0;
+  left: 120vw;
+  z-index: 99;
+  transition: left 0.3s ease;
+
+  &.open {
+    left: 0;
+  }
+
+  &__navList {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    &__item {
+      font-size: 2.5rem;
+      margin: 2rem 0;
+    }
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  position: relative;
+  height: 22px;
+  width: 27px;
+  background: none;
+  border: none;
+  outline: none;
+  z-index: 100;
+
+  @include media('>=tablet') {
+    display: none;
+  }
+
+  &__line {
+    cursor: pointer;
+    height: 2px;
+    width: 100%;
+    background: $clr-white;
+    position: absolute;
+    display: inline-block;
+    position: absolute;
+    opacity: 0.8;
+    left: 0;
+    transform: translateY(-50%);
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
+
+    &-one {
+      top: calc(50% - 8px);
+    }
+
+    &-two {
+      top: 50%;
+      opacity: 1;
+    }
+
+    &-three {
+      top: calc(50% + 8px);
+    }
+  }
+
+  &.open &__line-one {
+    transform: translateY(calc(-50% + 8px)) rotate(405deg);
+  }
+
+  &.open &__line-two {
+    opacity: 0;
+  }
+
+  &.open &__line-three {
+    transform: translateY(calc(-50% - 8px)) rotate(-405deg);
+  }
+}
