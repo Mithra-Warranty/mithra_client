@@ -1,0 +1,14 @@
+@use './utils/variables' as *;
+@use './utils/include-media' as *;
+
+.footer {
+  width: 100%;
+  padding: 2rem 2rem;
+  background-color: $clr-gray;
+  p {
+    font-size: 1.3rem;
+    margin: 0 auto;
+    opacity: 0.6;
+    text-align: center;
+  }
+}
