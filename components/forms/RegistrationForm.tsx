@@ -5,6 +5,14 @@ import Button from '../reusables/Button';
 function RegistrationForm() {
   return (
     <form className={styles.form}>
+      <div className={styles.form__pattern}>
+        <Image
+          src="/assetDots.svg"
+          height={230}
+          width={150}
+          alt="abstract pattern"
+        />
+      </div>
       <fieldset>
         <label>
           <p>Brand Name</p>
