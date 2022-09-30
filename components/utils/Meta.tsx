@@ -7,6 +7,7 @@ interface Props {
 }
 
 const Meta = ({ title, description }: Props) => {
+  const titleText = `Mithra | ${title}`;
   return (
     <Head>
       <meta charSet="utf-8" />
@@ -17,7 +18,7 @@ const Meta = ({ title, description }: Props) => {
         content="warranty,NFT,mithra,brands,crypto,blockchain,ownership"
       />
 
-      <title> Mithra | {title} </title>
+      <title>{titleText}</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );

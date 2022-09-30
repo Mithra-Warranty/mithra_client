@@ -38,7 +38,8 @@
     width: 18rem;
   }
 
-  &.form-submit {
+  &.form-submit,
+  &.secondary {
     border: 1px solid $clr-primary;
     margin: 1rem auto 3rem auto;
     display: block;
@@ -50,10 +51,18 @@
       color: $clr-white;
     }
 
-    @include media('>mindesk') {
+    @include media('>=mindesk') {
       margin: 2rem auto;
       font-size: 1.5rem;
       width: 15rem;
+    }
+  }
+
+  &.secondary {
+    margin-top: 4rem;
+
+    @include media('>=mindesk') {
+      margin: 3rem 0;
     }
   }
 }
