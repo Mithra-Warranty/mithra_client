@@ -24,7 +24,7 @@ function Navbar() {
               <a>Warranty</a>
             </li>
           </Link>
-          <Link href="/register" passHref>
+          <Link href="/dashboard" passHref>
             <li className={styles.navList__item}>
               <a>Dashboard</a>
             </li>
@@ -47,7 +47,7 @@ function Navbar() {
               <a>Warranty</a>
             </li>
           </Link>
-          <Link href="/register" passHref>
+          <Link href="/dashboard" passHref>
             <li className={styles.mobileNav__navList__item}>
               <a>Dashboard</a>
             </li>
