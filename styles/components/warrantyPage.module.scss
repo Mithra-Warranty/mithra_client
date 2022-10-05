@@ -1,0 +1,122 @@
+@use '../utils/variables' as *;
+@use '../utils/include-media' as *;
+
+.container {
+  margin-top: 3rem;
+  .top {
+    @include media('>=mindesk') {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      border: 3px solid $clr-white;
+      width: 30rem;
+      height: auto;
+      margin: 0 auto;
+      padding: 0.5rem 2rem;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+
+      @include media('>=mindesk') {
+        margin: 0;
+        margin-right: 9vw;
+        width: 35rem;
+        height: 45rem;
+      }
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        & p:last-of-type {
+          opacity: 0.6;
+        }
+      }
+
+      &__image {
+        align-self: stretch;
+        width: 100%;
+        height: 30rem;
+        object-fit: contain;
+        object-position: center;
+        overflow: hidden;
+
+        @include media('>=mindesk') {
+          height: 35rem;
+        }
+      }
+
+      &__footer {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 1rem 0;
+
+        & p:last-of-type {
+          opacity: 0.6;
+          font-size: 1.3rem;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+
+    &__desc {
+      text-align: center;
+
+      @include media('>=mindesk') {
+        text-align: left;
+        width: 40%;
+      }
+      h2 {
+        font-size: 3rem;
+        margin: 4rem 0;
+
+        @include media('>=mindesk') {
+          font-size: clamp(4rem, 4vw, 5.5rem);
+        }
+      }
+
+      &__item {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 1.5rem;
+
+        @include media('>=mindesk') {
+          margin: 1.5rem 0;
+          font-size: 1.3rem;
+        }
+        h3 {
+          opacity: 1;
+          color: $clr-primary;
+        }
+
+        p {
+          font-size: 1.8rem;
+          margin-top: 0.5rem;
+          opacity: 0.6;
+          @include media('>=mindesk') {
+            font-size: 2rem;
+          }
+        }
+
+        p.text {
+          font-size: 1.2rem;
+          width: 90%;
+          margin: 0.5rem auto 0 auto;
+          @include media('>=tablet') {
+            max-width: 65ch;
+          }
+          @include media('>=mindesk') {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

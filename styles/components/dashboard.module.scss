@@ -1,0 +1,184 @@
+@use './utils/variables' as *;
+@use './utils/include-media' as *;
+
+.container {
+  margin-top: 2rem;
+  .header {
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+
+      @include media('>=mindesk') {
+        font-size: 2.5rem;
+      }
+    }
+    span {
+      color: $clr-primary;
+    }
+
+    .tabs {
+      display: flex;
+      width: 20rem;
+      background-color: transparent;
+
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem auto;
+
+      &__tab {
+        flex: 1 1 50%;
+        text-align: center;
+        padding: 0.8rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid $clr-primary;
+        border-radius: 50rem 0 0 50rem;
+
+        &:first-of-type {
+          border-right: none;
+        }
+
+        &:last-of-type {
+          border-radius: 0 50rem 50rem 0;
+          border-left: none;
+        }
+
+        h3 {
+          font-size: 1rem;
+          font-weight: 500;
+
+          @include media('>=mindesk') {
+            font-size: 1.3rem;
+          }
+        }
+
+        &.active {
+          background-color: $clr-primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .cards {
+    margin-top: 4rem;
+    @include media('>=tablet') {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 8rem;
+    }
+
+    @include media('>=mindesk') {
+      gap: clamp(3.5rem, 5vw, 7rem);
+    }
+    .card {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      background-color: $clr-gray;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      width: 32rem;
+      height: 16rem;
+      border: 2px solid $clr-white;
+
+      &.claimed {
+        border: 2px solid $clr-primary;
+      }
+
+      &.claimed .card__details__claimed {
+        display: block;
+      }
+
+      @include media('>=tablet') {
+        margin: 0;
+      }
+
+      @include media('>=mindesk') {
+        width: clamp(45rem, 45vw, 50rem);
+        height: unset;
+      }
+
+      &__image_container {
+        width: 12rem;
+        height: 12rem;
+        overflow: hidden;
+        margin-right: 1rem;
+
+        @include media('>=mindesk') {
+          height: clamp(16rem, 17vw, 20rem);
+          width: clamp(16rem, 17vw, 20rem);
+          margin-right: 2.5rem;
+        }
+
+        & img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &__details {
+        &__items {
+          margin-bottom: 0.7rem;
+
+          @include media('>=mindesk') {
+            margin-bottom: 1.1rem;
+          }
+
+          &:last-of-type {
+            margin: 0;
+          }
+          h4 {
+            color: $clr-primary;
+            font-size: 0.8rem;
+            font-weight: 700;
+
+            @include media('>=mindesk') {
+              font-size: 1.2rem;
+            }
+          }
+
+          p {
+            color: $clr-white;
+            font-size: 1.1rem;
+
+            @include media('>=mindesk') {
+              font-size: 1.7rem;
+            }
+            font-weight: 500;
+
+            &.owner_address {
+              width: 20ch;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+
+        &__claimed {
+          display: none;
+          width: 25ch;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          & a {
+            font-size: 0.8rem;
+            color: $clr-primary;
+            text-decoration: underline;
+            @include media('>=mindesk') {
+              font-size: 1.2rem;
+            }
+          }
+
+          @include media('>=mindesk') {
+            width: 30ch;
+          }
+        }
+      }
+    }
+  }
+}
