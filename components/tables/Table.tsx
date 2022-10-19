@@ -19,14 +19,16 @@ function Table({headers, data} : {headers: Header, data: any}) {
                     );
                 })}
             </tr>
-            {data.map((entry: any) => {
+            {data.map((entry: any, id: number) => {
                 return (
-                    <tr className={styles.table__row__content}>
+                    <tr className={styles.table__row__content} key={id}>
                         {Object.keys(headers).map((header: string) => 
                             Object.entries(entry).map(([key, val]: [key: string, val: any]) => {
                                 if(key == header) {
                                     return (
-                                        <th className={styles.table__content} key={key}>{val}</th>
+                                        <th className={styles.table__content} key={key}>
+                                            {key === 'txn' ? <a href="#">{val}</a> : val}
+                                        </th>
                                     )
                                 }
                             }

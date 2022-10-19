@@ -27,5 +27,11 @@
     &__content {
         font-weight: 400;
         padding: 20px 3rem;
+
+        a {
+            :hover {
+                cursor: pointer;
+            }
+        }
     }
 }
