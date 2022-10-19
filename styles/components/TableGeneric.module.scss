@@ -5,6 +5,8 @@
     width: 85%;
     font-size: 1.5rem;
     border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
 
     &__row {
         &__header {
@@ -19,11 +21,11 @@
     &__header {
         background-color: #2b2b2b;
         font-weight: 500;
-        padding: 15px 0;
+        padding: 15px 3rem;
     }
 
     &__content {
         font-weight: 400;
-        padding: 20px 0;
+        padding: 20px 3rem;
     }
 }

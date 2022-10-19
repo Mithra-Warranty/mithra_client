@@ -15,7 +15,7 @@ function Table({headers, data} : {headers: Header, data: any}) {
             <tr className={styles.table__row__header}>
                 {Object.values(headers).map((header: string) => {
                     return (
-                        <th className={styles.table__header}>{header}</th>
+                        <th className={styles.table__header} key={header}>{header}</th>
                     );
                 })}
             </tr>
@@ -26,7 +26,7 @@ function Table({headers, data} : {headers: Header, data: any}) {
                             Object.entries(entry).map(([key, val]: [key: string, val: any]) => {
                                 if(key == header) {
                                     return (
-                                        <th className={styles.table__content}>{val}</th>
+                                        <th className={styles.table__content} key={key}>{val}</th>
                                     )
                                 }
                             }
