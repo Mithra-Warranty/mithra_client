@@ -19,7 +19,7 @@ function Navbar() {
               <a>Register</a>
             </li>
           </Link>
-          <Link href="/register" passHref>
+          <Link href="/status" passHref>
             <li className={styles.navList__item}>
               <a>Warranty</a>
             </li>
