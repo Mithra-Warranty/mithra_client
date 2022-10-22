@@ -7,8 +7,23 @@ import styles from '../../styles/components/warrantyPage.module.scss';
 import Meta from '../../components/utils/Meta';
 import Image from 'next/image';
 import Button from '../../components/reusables/Button';
+import Table from '../../components/tables/Table';
+import { useState } from 'react';
+
+// mock data
+import MockWarranty from '../mocks/MockWarranty.json';
 
 // variables / constants
+
+const mockWarranty = MockWarranty
+
+const warrantyHistory = {
+  "event": "Event",
+  "to": "To",
+  "from": "From",
+  "date": "Date",
+  "txn": "Transaction"
+}
 
 const meta = {
   title: 'Warranty Card',
@@ -16,6 +31,8 @@ const meta = {
 };
 
 const WarrantyCard: NextPage = () => {
+  const [warranty, setWarranty] = useState<any>(mockWarranty)
+
   return (
     <>
       <Meta {...meta} />
@@ -61,6 +78,9 @@ const WarrantyCard: NextPage = () => {
               Claim Warranty
             </Button>
           </div>
+        </div>
+        <div className={styles.top__table}>
+          <Table headers={warrantyHistory} data={warranty.history} /> 
         </div>
       </div>
     </>
