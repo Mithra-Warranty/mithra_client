@@ -12,7 +12,7 @@ interface Header {
 function Table({headers, data} : {headers: Header, data: any}) { 
     return (
         <table className={styles.table}>
-            <tbody>
+            <thead>
                 <tr className={styles.table__row__header}>
                     {Object.values(headers).map((header: string) => {
                         return (
@@ -20,6 +20,8 @@ function Table({headers, data} : {headers: Header, data: any}) {
                         );
                     })}
                 </tr>
+            </thead>
+            <tbody>
                 {data.map((entry: any, id: number) => {
                     return (
                         <tr className={styles.table__row__content} key={id}>
@@ -27,9 +29,9 @@ function Table({headers, data} : {headers: Header, data: any}) {
                                 Object.entries(entry).map(([key, val]: [key: string, val: any]) => {
                                     if(key == header) {
                                         return (
-                                            <th className={styles.table__content} key={key}>
+                                            <td className={styles.table__content} key={key}>
                                                 {key === 'txn' ? <a href="#">{val}</a> : val}
-                                            </th>
+                                            </td>
                                         )
                                     }
                                 }
