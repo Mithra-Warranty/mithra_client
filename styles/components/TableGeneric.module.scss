@@ -1,0 +1,39 @@
+@use '../utils/variables' as *;
+@use '../utils/include-media' as *;
+
+.table {
+    width: 85%;
+    font-size: 1.5rem;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+
+    &__row {
+        &__header {
+            border-top: 1px solid $clr-white;
+        }
+
+        &__content {
+            border-bottom: 1px solid $clr-white;
+        }
+    }    
+
+    &__header {
+        background-color: #2b2b2b;
+        font-weight: 500;
+        padding: 15px 3rem;
+        text-align: center;
+    }
+
+    &__content {
+        font-weight: 400;
+        padding: 20px 3rem;
+        text-align: center;
+
+        a {
+            :hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
