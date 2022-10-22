@@ -21,7 +21,7 @@ function Navbar() {
           </Link>
           <Link href="/status" passHref>
             <li className={styles.navList__item}>
-              <a>Warranty</a>
+              <a>Warranty Status</a>
             </li>
           </Link>
           <Link href="/dashboard" passHref>
