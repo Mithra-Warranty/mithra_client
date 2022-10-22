@@ -118,15 +118,5 @@
         }
       }
     }
-
-    &__table {
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-      margin: 3rem 0 5rem 0;
-      @include media('>=mindesk') {
-        width: 100%;
-      }
-    }
   }
 }
