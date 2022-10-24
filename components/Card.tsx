@@ -2,7 +2,7 @@
 import styles from '../styles/components/dashboard.module.scss';
 import Button from './reusables/Button';
 
-function Card() {
+function Card(): JSX.Element {
   return (
     <div className={styles.card}>
       <div className={styles.card__image_container}>

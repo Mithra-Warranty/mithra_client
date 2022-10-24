@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from '../../styles/components/RegistrationForm.module.scss';
 import Button from '../reusables/Button';
 
-function RegistrationForm() {
+function RegistrationForm(): JSX.Element {
   return (
     <form className={styles.form}>
       <div className={styles.form__pattern}>

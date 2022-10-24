@@ -15,7 +15,7 @@ function FormDescription({
   description,
   buttonText,
   buttonLink,
-}: Props) {
+}: Props): JSX.Element {
   return (
     <header className={styles.header}>
       <h2>{title}</h2>

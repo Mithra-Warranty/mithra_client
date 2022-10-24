@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from '../../styles/components/WarrantyStatusForm.module.scss';
 import Button from '../reusables/Button';
 
-function WarrantyStatusForm() {
+function WarrantyStatusForm(): JSX.Element {
   return (
     <form className={styles.form}>
       <div className={styles.form__pattern}>
@@ -39,12 +39,7 @@ function WarrantyStatusForm() {
           <p>Your Name</p>
           <div className={styles.form__inputContainer}>
             <div className={styles.form__inputContainer__logo}>
-              <Image
-                src="/user.svg"
-                height={18}
-                width={18}
-                alt="user logo"
-              />
+              <Image src="/user.svg" height={18} width={18} alt="user logo" />
             </div>
             <input type="text" required placeholder="John Doe" />
           </div>

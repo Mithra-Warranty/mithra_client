@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from '../styles/components/Navbar.module.scss';
 import Button from './reusables/Button';
 
-function Navbar() {
+function Navbar(): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={styles.navbar_container}>
@@ -67,7 +67,7 @@ interface hamburgerProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
-function Hamburger({ isOpen, setIsOpen }: hamburgerProps) {
+function Hamburger({ isOpen, setIsOpen }: hamburgerProps): JSX.Element {
   return (
     <button
       className={`${styles.hamburger} ${isOpen ? styles.open : ''}`}

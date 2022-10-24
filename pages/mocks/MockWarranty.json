@@ -1,36 +1,36 @@
 {
-    "name": "CryptoApe #1777",
-    "minter": "CryptoApe Co.",
-    "description": "Imperdiet at in interdum mattis. Cursus faucibus pellentesque vitae risus sit commodo vitae. Imperdiet at in interdum mattis. Cursus faucibus pellentesque vitae risus sit commodo vitae.",
-    "txnAddress": "0x4040d1dd5B6f9C864d9db560D72a247c178aE86B",
-    "owner": "Null_Crack",
-    "ownerAddress": "0x29D7d1dd5B6f9C864d9db560D72a247c178aE86B",
-    "bid": 0.54,
-    "bidAddress": "0x34D7d1dd5B689C864d9db560D72a247c178aE86B",
-    "history": [
-        {
-            "event": "Sale",
-            "to": "Recipient",
-            "from": "Owner",
-            "price": 0.43,
-            "date": "01.01.2001",
-            "txn": "0x1472d1dd5B6f9C864d9db560D72a247c178aE86B"
-        },
-        {
-            "event": "Transfer",
-            "to": "Recipient",
-            "from": "Owner",
-            "price": null,
-            "date": "01.01.2001",
-            "txn": "0x8900d1dd5B6f9C864d9db560D72a247c178aE86B"
-        },
-        {
-            "event": "Minted",
-            "to": "Minter",
-            "from": "Minter",
-            "price": null,
-            "date": "01.01.2001",
-            "txn": "0x5230d1dd5B6f9C864d9db560D72a247c178aE86B"
-        }
-    ]
+  "name": "CryptoApe #1777",
+  "minter": "CryptoApe Co.",
+  "description": "Imperdiet at in interdum mattis. Cursus faucibus pellentesque vitae risus sit commodo vitae. Imperdiet at in interdum mattis. Cursus faucibus pellentesque vitae risus sit commodo vitae.",
+  "txnAddress": "0x4040d1dd5B6f9C864d9db560D72a247c178aE86B",
+  "owner": "Null_Crack",
+  "ownerAddress": "0x29D7d1dd5B6f9C864d9db560D72a247c178aE86B",
+  "bid": 0.54,
+  "bidAddress": "0x34D7d1dd5B689C864d9db560D72a247c178aE86B",
+  "history": [
+    {
+      "event": "Sale",
+      "to": "Recipient",
+      "from": "Owner",
+      "price": 0.43,
+      "date": "01.01.2001",
+      "txn": "0x1472d1dd5B6f9C864d9db560D72a247c178aE86B"
+    },
+    {
+      "event": "Transfer",
+      "to": "Recipient",
+      "from": "Owner",
+      "price": null,
+      "date": "01.01.2001",
+      "txn": "0x8900d1dd5B6f9C864d9db560D72a247c178aE86B"
+    },
+    {
+      "event": "Minted",
+      "to": "Minter",
+      "from": "Minter",
+      "price": null,
+      "date": "01.01.2001",
+      "txn": "0x5230d1dd5B6f9C864d9db560D72a247c178aE86B"
+    }
+  ]
 }

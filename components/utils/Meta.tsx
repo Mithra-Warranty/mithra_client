@@ -6,7 +6,7 @@ interface Props {
   description: string;
 }
 
-const Meta = ({ title, description }: Props) => {
+const Meta = ({ title, description }: Props): JSX.Element => {
   const titleText = `Mithra | ${title}`;
   return (
     <Head>

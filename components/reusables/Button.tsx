@@ -12,7 +12,7 @@ interface Props {
   href: string;
 }
 
-function Button({ type, modifier, children, href }: Props) {
+function Button({ type, modifier, children, href }: Props): JSX.Element {
   if (type === 'submit') {
     return (
       <button className={`${styles.btn} ${styles[modifier]}`} type={type}>

@@ -1,12 +1,12 @@
-interface Props {
-  children: React.ReactNode;
-}
-
 import styles from '../styles/components/Layout.module.scss';
 import Footer from './Footer';
 import Navbar from './Navbar';
 
-function Layout({ children }: Props) {
+interface Props {
+  children: React.ReactNode;
+}
+
+function Layout({ children }: Props): JSX.Element {
   return (
     <div className={styles.layout}>
       <Navbar />

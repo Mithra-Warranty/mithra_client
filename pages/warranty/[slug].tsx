@@ -5,7 +5,6 @@ import styles from '../../styles/components/warrantyPage.module.scss';
 
 // components
 import Meta from '../../components/utils/Meta';
-import Image from 'next/image';
 import Button from '../../components/reusables/Button';
 import Table from '../../components/tables/Table';
 import { useState } from 'react';
@@ -15,15 +14,15 @@ import MockWarranty from '../mocks/MockWarranty.json';
 
 // variables / constants
 
-const mockWarranty = MockWarranty
+const mockWarranty = MockWarranty;
 
 const warrantyHistory = {
-  "event": "Event",
-  "to": "To",
-  "from": "From",
-  "date": "Date",
-  "txn": "Transaction"
-}
+  event: 'Event',
+  to: 'To',
+  from: 'From',
+  date: 'Date',
+  txn: 'Transaction',
+};
 
 const meta = {
   title: 'Warranty Card',
@@ -31,7 +30,7 @@ const meta = {
 };
 
 const WarrantyCard: NextPage = () => {
-  const [warranty, setWarranty] = useState<any>(mockWarranty)
+  const [warranty] = useState<any>(mockWarranty);
 
   return (
     <>
@@ -80,7 +79,7 @@ const WarrantyCard: NextPage = () => {
           </div>
         </div>
         <div className={styles.top__table}>
-          <Table headers={warrantyHistory} data={warranty.history} /> 
+          <Table headers={warrantyHistory} data={warranty.history} />
         </div>
       </div>
     </>

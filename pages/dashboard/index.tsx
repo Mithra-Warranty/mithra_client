@@ -5,8 +5,6 @@ import styles from '../../styles/components/dashboard.module.scss';
 
 // components
 import Meta from '../../components/utils/Meta';
-import Image from 'next/image';
-import Button from '../../components/reusables/Button';
 import { useState } from 'react';
 import Card from '../../components/Card';
 
@@ -20,7 +18,7 @@ const meta = {
 const Dashboard: NextPage = () => {
   const [tab, setTab] = useState('Pending');
 
-  const [products, setProducts] = useState<any>({
+  const [products] = useState<any>({
     Approved: [{}, {}, {}, {}],
     Pending: [{}, {}, {}, {}],
   });
@@ -39,7 +37,7 @@ const Dashboard: NextPage = () => {
                 setTab('Approved');
               }}
               className={`${styles.tabs__tab} ${
-                tab == 'Approved' ? styles.active : ''
+                tab === 'Approved' ? styles.active : ''
               }`}
             >
               <h3>Approved</h3>
@@ -49,7 +47,7 @@ const Dashboard: NextPage = () => {
                 setTab('Pending');
               }}
               className={`${styles.tabs__tab} ${
-                tab == 'Pending' ? styles.active : ''
+                tab === 'Pending' ? styles.active : ''
               }`}
             >
               <h3>Pending</h3>
@@ -58,8 +56,8 @@ const Dashboard: NextPage = () => {
         </div>
 
         <div className={styles.cards}>
-          {products[tab].map((product: any, index: any) => (
-            <Card />
+          {products[tab].map((product: any, index: number) => (
+            <Card key={`Card_${index}`} />
           ))}
         </div>
       </div>
