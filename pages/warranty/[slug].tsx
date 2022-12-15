@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
 import type { NextPage } from 'next';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 // styles
 import styles from '../../styles/components/warrantyPage.module.scss';
@@ -7,7 +10,6 @@ import styles from '../../styles/components/warrantyPage.module.scss';
 import Meta from '../../components/utils/Meta';
 import Button from '../../components/reusables/Button';
 import Table from '../../components/tables/Table';
-import { useState } from 'react';
 
 // mock data
 import MockWarranty from '../mocks/MockWarranty.json';
@@ -29,8 +31,72 @@ const meta = {
   description: 'Warranty Card for your product.',
 };
 
+interface Transaction {
+  event: string;
+  date: string;
+  from: string;
+  to: string;
+  email: string;
+  price: string;
+  txnId: string;
+  txnHash: string;
+}
+
+interface Product {
+  name: string;
+  owner: string;
+  tokenId: number;
+  nonce: string;
+  claim: boolean;
+  productId: string;
+  brand: string;
+  brandAddress: string;
+  contractAddress: string;
+  metaHash: string;
+  tokenUri: string;
+  minter: string;
+  mintedOn: Date;
+  period: Date;
+  description: number;
+  forSale: boolean;
+  approval: Transaction;
+  approvalStatus: boolean;
+  transactions: [Transaction];
+  saleDate: string;
+  email: string;
+}
+
 const WarrantyCard: NextPage = () => {
-  const [warranty] = useState<any>(mockWarranty);
+  const [product, setProduct] = useState<any>(mockWarranty);
+
+  const router = useRouter();
+  const { slug } = router.query;
+
+  useEffect(() => {
+    if (slug === undefined) return;
+
+    const fetchData = async (): Promise<any> => {
+      try {
+        const response = await fetch(
+          'http://localhost:5050/api/v1/token/single',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ productId: slug }),
+          }
+        );
+
+        const data = await response.json();
+        console.log(data);
+        setProduct(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [slug]);
 
   return (
     <>
@@ -79,7 +145,7 @@ const WarrantyCard: NextPage = () => {
           </div>
         </div>
         <div className={styles.top__table}>
-          <Table headers={warrantyHistory} data={warranty.history} />
+          <Table headers={warrantyHistory} data={product.history} />
         </div>
       </div>
     </>
