@@ -11,9 +11,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "ethers": "^5.7.2",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-toastify": "^9.1.1"
   },
   "devDependencies": {
     "@types/node": "18.7.3",
@@ -28,9 +30,9 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.10",
+    "husky": "^8.0.0",
     "prettier": "2.7.1",
     "sass": "^1.54.4",
-    "typescript": "*",
-    "husky": "^8.0.0"
+    "typescript": "*"
   }
 }
